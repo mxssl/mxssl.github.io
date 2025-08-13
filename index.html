@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Engineering</title>
+    <style>
+      @font-face {
+        font-family: "Univers LT Pro";
+        src: url("univers_lt_pro_57_condensed.woff2") format("woff2");
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+      }
+
+      :root {
+        --bg: #f4f4f4;
+        --fg: #000;
+        --muted: #000;
+        --line: #ccc;
+        --accent: #005eec;
+        --card: #fff;
+        --maxw: 920px;
+      }
+      html,
+      body {
+        height: 100%;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        background: #ddd;
+        color: var(--fg);
+        font:
+          16px/1.6 "Univers LT Pro",
+          ui-sans-serif,
+          system-ui,
+          -apple-system,
+          Segoe UI,
+          Roboto,
+          "Helvetica Neue",
+          Arial,
+          "Apple Color Emoji",
+          "Segoe UI Emoji";
+        text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        padding: 40px 20px;
+      }
+
+      /* A4 Page Container */
+      .page {
+        max-width: 794px; /* A4 width in pixels at 96dpi (210mm) */
+        margin: 0 auto;
+        background: #fff;
+        border: 1px solid #999;
+        box-shadow:
+          0 8px 24px rgba(0, 0, 0, 0.15),
+          0 4px 8px rgba(0, 0, 0, 0.1);
+        padding: 30px 60px 60px 60px;
+        position: relative;
+      }
+      /* Page chrome */
+      main {
+        max-width: none;
+        margin: 0;
+        padding: 0;
+      }
+      .sep {
+        height: 1px;
+        background: var(--line);
+        margin: 18px 0 28px;
+      }
+
+      /* Hero */
+      .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: start;
+        margin-bottom: 8px;
+      }
+      .eyebrow {
+        font-size: 0.8rem;
+        color: var(--muted);
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+      .contact-header {
+        font-size: 0.8rem;
+        color: var(--muted);
+        text-align: right;
+      }
+      h1 {
+        font-size: clamp(28px, 4vw, 44px);
+        line-height: 1.2;
+        margin: 4px 0 8px;
+      }
+      .lede {
+        color: var(--muted);
+      }
+
+      /* Info grid */
+      .grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 14px;
+      }
+      .card.full-width {
+        grid-column: 1 / -1;
+      }
+      @media (min-width: 760px) {
+        .grid {
+          grid-template-columns: 1fr 1fr;
+          gap: 22px;
+        }
+      }
+
+      .card {
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: 0;
+        padding: 16px 16px 14px;
+        box-shadow: none;
+      }
+      .card h2 {
+        font-size: 0.92rem;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        margin: 2px 0 8px;
+        color: var(--muted);
+      }
+      .kv {
+        display: grid;
+        grid-template-columns: 80px 1fr;
+        gap: 20px;
+        align-items: start;
+        border-top: 1px solid var(--line);
+        padding-top: 8px;
+      }
+      .kv.three-col {
+        grid-template-columns: 80px 1fr 120px;
+      }
+      .kv:first-of-type {
+        border-top: none;
+        padding-top: 0;
+      }
+      .k {
+        color: var(--muted);
+      }
+      .v {
+        font-family:
+          "Univers LT Pro",
+          ui-sans-serif,
+          system-ui,
+          -apple-system,
+          Segoe UI,
+          Roboto,
+          "Helvetica Neue",
+          Arial,
+          "Apple Color Emoji",
+          "Segoe UI Emoji";
+      }
+
+      /* Footer */
+      footer {
+        border-top: 1px solid var(--line);
+        margin-top: 32px;
+      }
+      .foot {
+        max-width: var(--maxw);
+        margin: 0 auto;
+        padding: 18px 20px 40px;
+        color: var(--muted);
+        display: flex;
+        gap: 10px;
+        justify-content: space-between;
+        flex-wrap: wrap;
+      }
+      .social a {
+        color: var(--muted);
+        text-decoration: none;
+      }
+      .pill {
+        display: inline-block;
+        padding: 4px 8px;
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        font-size: 0.85rem;
+      }
+
+      /* Tiny helpers */
+      .tag {
+        display: inline-block;
+        font-size: 0.8rem;
+        color: var(--muted);
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        padding: 2px 8px;
+        margin: 6px 6px 0 0;
+      }
+      .accent {
+        color: var(--accent);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <main id="top">
+        <div class="header">
+          <div class="eyebrow" id="overview">
+            Max Susula · Infrastructure Lead
+          </div>
+          <div class="contact-header">
+            m.susula at gmail.com ·
+            <a href="https://github.com/mxssl">github.com/mxssl</a> ·
+            <a href="https://t.me/mxssl">@mxssl</a> · Remote
+          </div>
+        </div>
+        <h1></h1>
+        <div class="lede">
+          Infrastructure expert with more than 15 years of experience managing
+          and optimizing geo-distributed bare metal servers, cloud environments,
+          and blockchain nodes. Proven track record in infrastructure cost
+          reduction, performance tuning, and delivering scalable solutions for
+          APIs handling more than 60K RPS and 1 PB of traffic per month.
+          Extensive experience with self-hosted services and in-house solutions.
+          Skilled in organizing small, highly effective teams to efficiently
+          achieve ambitious technical goals.
+        </div>
+
+        <div class="sep"></div>
+
+        <section class="grid" aria-label="Stack">
+          <article class="card full-width">
+            <h2>Software Stack</h2>
+            <div class="kv">
+              <div class="k">OS</div>
+              <div class="v">Linux</div>
+            </div>
+            <div class="kv">
+              <div class="k">Editor</div>
+              <div class="v">Neovim</div>
+            </div>
+            <div class="kv">
+              <div class="k">Containers</div>
+              <div class="v">Docker, Kubernetes</div>
+            </div>
+            <div class="kv">
+              <div class="k">Coding</div>
+              <div class="v">Go</div>
+            </div>
+            <div class="kv">
+              <div class="k">IaC</div>
+              <div class="v">Terraform, Ansible, Helm</div>
+            </div>
+            <div class="kv">
+              <div class="k">Blockchain</div>
+              <div class="v">Geth, Reth, Erigon, Prysm, Lighthouse</div>
+            </div>
+            <div class="kv">
+              <div class="k">Databases</div>
+              <div class="v">
+                PostgreSQL, MySQL, Redis, DragonflyDB, Clickhouse
+              </div>
+            </div>
+            <div class="kv">
+              <div class="k">Streaming</div>
+              <div class="v">RabibbitMQ, Kafka</div>
+            </div>
+            <div class="kv">
+              <div class="k">Observability</div>
+              <div class="v">
+                Prometheus, Grafana, VictoriaMetrics, Loki, Sentry,
+                OpenTelemetry, Vector
+              </div>
+            </div>
+            <div class="kv">
+              <div class="k">Web Servers</div>
+              <div class="v">Nginx, Haproxy, Caddy, Traefik</div>
+            </div>
+            <div class="kv">
+              <div class="k">CI/CD</div>
+              <div class="v">Gitlab, Github</div>
+            </div>
+            <div class="kv">
+              <div class="k">Clouds & Hostings</div>
+              <div class="v">AWS, GCP, Hetzner, Latitude, Cherry Servers</div>
+            </div>
+          </article>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>
